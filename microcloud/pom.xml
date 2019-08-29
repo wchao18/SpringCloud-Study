@@ -6,7 +6,12 @@
 
     <groupId>com.it</groupId>
     <artifactId>microcloud</artifactId>
+    <packaging>pom</packaging>
     <version>1.0.0</version>
+    <modules>
+        <module>microcloud-api</module>
+        <module>microcloud-provider-dept-8001</module>
+    </modules>
 
 
     <properties>
@@ -63,6 +68,12 @@
                 <groupId>log4j</groupId>
                 <artifactId>log4j</artifactId>
                 <version>${log4j.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>1.2.54</version>
             </dependency>
 
         </dependencies>
