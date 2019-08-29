@@ -55,6 +55,12 @@
             <artifactId>microcloud-api</artifactId>
             <version>${version}</version>
         </dependency>
+
+        <dependency>
+            <groupId>com.it</groupId>
+            <artifactId>microcloud-security</artifactId>
+            <version>${version}</version>
+        </dependency>
         <!--依赖本服务包结束-->
 
         <!--springboot和cloud包开始-->
@@ -72,12 +78,12 @@
             <artifactId>spring-boot-devtools</artifactId>
         </dependency>
 
-        <!--security包-->
+        <!--security包,已经把这个独立成microcloud-security模块-->
         <!--Using default security password: 8d4ba580-882a-4934-8f44-479705f4e377-->
-        <dependency>
+       <!-- <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-security</artifactId>
-        </dependency>
+        </dependency>-->
 
         <!--springboot和cloud包结束-->
     </dependencies>

@@ -6,9 +6,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 @MapperScan(value = "com.it.dao")
-public class Dept_8001_StartSpringCloudApplicationTests {
+public class Dept_8001_StartSpringCloudApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(Dept_8001_StartSpringCloudApplicationTests.class,args);
+        SpringApplication.run(Dept_8001_StartSpringCloudApplication.class,args);
     }
 }

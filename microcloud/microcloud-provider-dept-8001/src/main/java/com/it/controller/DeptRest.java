@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.http.HttpServletRequest;
+
 
 @RestController
 public class DeptRest {
@@ -30,4 +32,11 @@ public class DeptRest {
     public Object list() {
         return this.deptService.list();
     }
+
+    //测试session
+    @RequestMapping(value = "/session", method = RequestMethod.GET)
+    public Object list(HttpServletRequest httpServletRequest) {
+        return httpServletRequest.getSession().getId();
+    }
+
 }

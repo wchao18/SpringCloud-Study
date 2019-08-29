@@ -12,6 +12,7 @@
         <module>microcloud-api</module>
         <module>microcloud-provider-dept-8001</module>
         <module>microcloud-consumer-80</module>
+        <module>microcloud-security</module>
     </modules>
 
 
