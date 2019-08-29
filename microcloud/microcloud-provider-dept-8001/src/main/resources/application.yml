@@ -1,6 +1,11 @@
 server:
   port: 8001
 
+eureka:
+  client:
+    service-url:
+      defaultZone : http://eureka-7001.com:7001/eureka/
+
 spring:
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource   #数据源类型
@@ -14,6 +19,8 @@ spring:
       min-idle: 5            #数据库连接池维持的最小连接数
       max-total: 20          #最大连接数
       max-wait-millis: 200   #等待连接的最大超时时间,单位ms
+  application:
+    name: microcloud-provider-dept-8001  #服务的名称
 mybatis:
   #config-location: classpath:mybatis/mybatis.cfg.xml  #mybatis配置文件所在路径
   mapper-locations: classpath*:mybatis/**/*.xml     #mapper.xml配置文件
@@ -37,5 +44,5 @@ pagehelper:
 #    name: admin
 #    password: 123456
 #    role:
-#      - USER
+#      - USER      #这个不配置可能会报错
 #  sessions: stateless #默认无状态的,这个配置有效，必须上面的enable=true

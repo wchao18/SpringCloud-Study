@@ -1,0 +1,8 @@
+server:
+  port: 7001
+eureka:
+  instance:
+    hostname: eureka-7001.com #eureka实例所在的主机名称
+security:
+  basic:
+    enabled: false

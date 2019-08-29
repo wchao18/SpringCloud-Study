@@ -13,6 +13,7 @@
         <module>microcloud-provider-dept-8001</module>
         <module>microcloud-consumer-80</module>
         <module>microcloud-security</module>
+        <module>microcloud-eureka-7001</module>
     </modules>
 
 
@@ -100,9 +101,11 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-resources-plugin</artifactId>
                 <configuration>
+                    <useDefaultDelimiters>false</useDefaultDelimiters>
                     <delimiters>
                         <delimit>$</delimit>
                     </delimiters>
+                    <encoding>UTF-8</encoding>
                 </configuration>
             </plugin>
         </plugins>
