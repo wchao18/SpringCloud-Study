@@ -73,9 +73,11 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+
+        <!--加这个有点隐私问题-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-devtools</artifactId>
+            <artifactId>spring-boot-actuator</artifactId>
         </dependency>
 
         <!--security包,已经把这个独立成microcloud-security模块-->

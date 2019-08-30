@@ -5,6 +5,17 @@ eureka:
   client:
     service-url:
       defaultZone : http://eureka-7001.com:7001/eureka/
+  instance :
+    instance-id : dept-8001.com  #在状态status显示，信息列表显示主机名称
+    prefer-ip-address: true      #访问路径变为ip地址
+
+management:
+  security:
+    enabled: true # acutator组件，默认true
+info:
+   app.name : ${spring.application.name}
+   app.artifactId : ${project.artifactId}
+   app.version : ${project.version}
 
 spring:
   datasource:
