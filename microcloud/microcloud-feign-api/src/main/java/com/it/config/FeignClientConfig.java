@@ -1,5 +1,6 @@
 package com.it.config;
 
+import feign.Logger;
 import feign.auth.BasicAuthRequestInterceptor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -11,6 +12,10 @@ import org.springframework.context.annotation.Configuration;
  */
 @Configuration
 public class FeignClientConfig {
+
+    public Logger.Level feignLogger(){
+        return feign.Logger.Level.FULL;
+    }
 
     @Bean
     public BasicAuthRequestInterceptor getBasicAuthRequestInterceptor() {
