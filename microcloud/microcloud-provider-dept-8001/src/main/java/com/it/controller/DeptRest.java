@@ -3,6 +3,7 @@ package com.it.controller;
 import com.it.service.IDeptService;
 import com.it.vo.Dept;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,6 +18,16 @@ public class DeptRest {
 
     @Autowired
     private IDeptService deptService;
+
+    @Autowired
+    private DiscoveryClient discoveryClient;
+
+    @RequestMapping(value = "/dept/discovery", method = RequestMethod.GET)
+    public Object discovery() {
+        return this.discoveryClient;
+    }
+
+
 
     @RequestMapping(value = "/dept/get/{id}", method = RequestMethod.GET)
     public Object get(@PathVariable("id") long id) {
