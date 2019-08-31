@@ -52,7 +52,7 @@
         <!--依赖本服务包开始-->
         <dependency>
             <groupId>com.it</groupId>
-            <artifactId>microcloud-api</artifactId>
+            <artifactId>microcloud-common</artifactId>
             <version>${version}</version>
         </dependency>
 

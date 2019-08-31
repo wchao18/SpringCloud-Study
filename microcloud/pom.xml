@@ -15,14 +15,16 @@
     <packaging>pom</packaging>
     <version>1.0.0</version>
     <modules>
-        <module>microcloud-api</module>
+        <module>microcloud-feign-api</module>
         <module>microcloud-provider-dept-8001</module>
         <module>microcloud-provider-dept-8002</module>
         <module>microcloud-consumer-80</module>
+        <module>microcloud-consumer-80-feign</module>
         <module>microcloud-security</module>
         <module>microcloud-eureka-7001</module>
         <module>microcloud-eureka-7002</module>
         <module>microcloud-eureka-7003</module>
+        <module>microcloud-common</module>
     </modules>
 
 

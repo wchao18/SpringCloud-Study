@@ -28,7 +28,7 @@
 
         <dependency>
             <groupId>com.it</groupId>
-            <artifactId>microcloud-api</artifactId>
+            <artifactId>microcloud-common</artifactId>
             <version>${version}</version>
         </dependency>
 
