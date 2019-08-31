@@ -13,6 +13,10 @@ import org.springframework.web.client.RestTemplate;
 @Configuration
 public class RestConfig {
 
+    /**
+     * 1.默认轮询
+     * 2.ribbon的loadbalance,服务如果挂一台，服务没找到，还是会报错的，下一次请求就可以了（很危险！！）
+     */
     @LoadBalanced
     @Bean
     public RestTemplate restTemplate() {

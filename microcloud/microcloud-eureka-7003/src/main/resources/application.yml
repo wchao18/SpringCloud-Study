@@ -5,8 +5,8 @@ eureka:
   instance:
     hostname: eureka-7003.com #eureka实例所在的主机名称
   server:
-    #eviction-interval-timer-in-ms: 60000  #设置清理服务的间隔时间，单位毫秒，默认60秒，***自我保护模式关闭才生效**
-    #enable-self-preservation: false       #eureka的自我保护模式，
+    eviction-interval-timer-in-ms: 5000  #设置清理服务的间隔时间，单位毫秒，默认60秒，***自我保护模式关闭才生效**
+    enable-self-preservation: false       #eureka的自我保护模式，
   client:
     register-with-eureka: false
                                   # Cannot execute request on any known serverz 一直在控制台刷日志
