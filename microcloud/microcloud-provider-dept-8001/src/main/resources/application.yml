@@ -17,8 +17,8 @@ management:
     enabled: true # acutator组件，默认true
 info:
    app.name : ${spring.application.name}
-   app.artifactId : ${project.artifactId}
-   app.version : ${project.version}
+   app.artifactId : $project.artifactId$
+   app.version : $project.version$
 
 spring:
   datasource:

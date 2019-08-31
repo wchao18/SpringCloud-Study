@@ -17,6 +17,7 @@
     <modules>
         <module>microcloud-api</module>
         <module>microcloud-provider-dept-8001</module>
+        <module>microcloud-provider-dept-8002</module>
         <module>microcloud-consumer-80</module>
         <module>microcloud-security</module>
         <module>microcloud-eureka-7001</module>
@@ -31,6 +32,7 @@
         <maven.compiler.target>1.8</maven.compiler.target>
         <junit.version>4.12</junit.version>
         <log4j.version>1.2.17</log4j.version>
+        <resource.delimiter>$</resource.delimiter>
     </properties>
 
     <dependencyManagement>
@@ -94,5 +96,21 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <configuration>
+                    <delimiters>
+                        <delimiter>${resource.delimiter}</delimiter>
+                    </delimiters>
+                    <useDefaultDelimiters>false</useDefaultDelimiters>
+                    <encoding>utf-8</encoding>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>

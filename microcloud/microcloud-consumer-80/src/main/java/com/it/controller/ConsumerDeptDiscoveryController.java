@@ -9,6 +9,7 @@ import org.springframework.web.client.RestTemplate;
 
 import java.util.List;
 
+@RequestMapping("/discovery")
 @RestController
 public class ConsumerDeptDiscoveryController {
     public static final String APP_NAME = "http://MICROCLOUD-PROVIDER-DEPT-8001";
