@@ -4,7 +4,7 @@ server:
 eureka:
   client:
     service-url:
-      defaultZone : http://admin:123456@eureka-7001.com:7001/eureka/
+      defaultZone : http://admin:123456@eureka-7001.com:7001/eureka/,http://admin:123456@eureka-7002.com:7002/eureka/,http://admin:123456@eureka-7003.com:7003/eureka/
   instance :
     instance-id : dept-8001.com  #在状态status显示，信息列表显示主机名称
     prefer-ip-address: true      #访问路径变为ip地址
@@ -34,7 +34,7 @@ spring:
       max-total: 20          #最大连接数
       max-wait-millis: 200   #等待连接的最大超时时间,单位ms
   application:
-    name: microcloud-provider-dept-8001  #服务的名称
+    name: microcloud-provider-dept  #服务的名称
 mybatis:
   #config-location: classpath:mybatis/mybatis.cfg.xml  #mybatis配置文件所在路径
   mapper-locations: classpath*:mybatis/**/*.xml     #mapper.xml配置文件

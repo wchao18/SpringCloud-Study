@@ -11,9 +11,10 @@ import java.util.List;
 
 @RestController
 public class ConsumerDeptDiscoveryController {
-    public static final String DEPT_GET_URL = "http://127.0.0.1:8001/dept/get/";
-    public static final String DEPT_LIST_URL = "http://127.0.0.1:8001/dept/list/";
-    public static final String DEPT_ADD_URL = "http://127.0.0.1:8001/dept/add";
+    public static final String APP_NAME = "http://MICROCLOUD-PROVIDER-DEPT-8001";
+    public static final String DEPT_GET_URL = APP_NAME + "/dept/get/";
+    public static final String DEPT_LIST_URL = APP_NAME + "/dept/list/";
+    public static final String DEPT_ADD_URL = APP_NAME + "/dept/add";
 
     @Autowired
     private RestTemplate restTemplate;
