@@ -1,0 +1,23 @@
+server:
+  port: 80
+
+eureka:
+  client:
+    service-url:
+      defaultZone : http://admin:123456@eureka-7001.com:7001/eureka/,http://admin:123456@eureka-7002.com:7002/eureka/,http://admin:123456@eureka-7003.com:7003/eureka/
+    register-with-eureka: false
+
+
+feign:
+  compression:
+    request:
+      mime-types:
+        - text/xml
+        - application/xml
+        - application/json
+      min-request-size: 2048
+
+
+logging:
+  level:
+     root: debug
