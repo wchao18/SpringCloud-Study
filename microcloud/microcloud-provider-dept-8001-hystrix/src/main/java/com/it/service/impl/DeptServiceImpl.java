@@ -19,4 +19,9 @@ public class DeptServiceImpl implements IDeptService {
         return this.deptDAO.findById(id);
     }
 
+    @Override
+    public List<Dept> list() {
+        return this.deptDAO.findAll();
+    }
+
 }

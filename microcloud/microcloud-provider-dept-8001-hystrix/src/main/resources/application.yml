@@ -62,3 +62,8 @@ pagehelper:
 #    role:
 #      - USER      #这个不配置可能会报错
 #  sessions: stateless #默认无状态的,这个配置有效，必须上面的enable=true
+
+security:
+  ignored:
+    - /hystrix.stream
+    - /turbine.stream

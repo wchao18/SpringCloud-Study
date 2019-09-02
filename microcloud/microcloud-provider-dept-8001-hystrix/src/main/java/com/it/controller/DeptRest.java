@@ -40,4 +40,11 @@ public class DeptRest {
         vo.setDeptno(999999999999L);
         return vo;
     }
+
+
+    @RequestMapping(value = "/dept/list", method = RequestMethod.GET)
+    @HystrixCommand   //如果需要进行性能监控，那么必须要有此注解
+    public Object list() {
+        return this.deptService.list();
+    }
 }

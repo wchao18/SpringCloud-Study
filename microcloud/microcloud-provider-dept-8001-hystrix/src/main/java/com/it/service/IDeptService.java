@@ -7,4 +7,6 @@ import java.util.List;
 
 public interface IDeptService {
 	Dept get(long id) ;
+
+    List<Dept> list() ;
 }
