@@ -9,6 +9,8 @@ eureka:
 
 
 feign:
+  hystrix:
+    enabled: true
   compression:
     request:
       mime-types:
@@ -20,4 +22,4 @@ feign:
 
 logging:
   level:
-     root: debug
+     root: info

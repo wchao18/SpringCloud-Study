@@ -21,7 +21,7 @@ public class DeptRest {
     private IDeptService deptService;
 
     @RequestMapping(value = "/dept/get/{id}", method = RequestMethod.GET)
-    //本方法执行报错，并不是服务停止了，会执行fallbackmethod方法
+    //服务熔断：本方法执行报错，并不是服务停止了，会执行fallbackmethod方法
     @HystrixCommand(fallbackMethod = "getFallBack")
     public Object get(@PathVariable("id") long id) {
         Dept dept = deptService.get(id);
@@ -32,7 +32,7 @@ public class DeptRest {
     }
 
     /**
-     *
+     * 服务熔断处理方法
      */
     public Object getFallBack(@PathVariable("id") long id) {
         Dept vo = new Dept();
