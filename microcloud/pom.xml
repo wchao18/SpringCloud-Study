@@ -22,6 +22,7 @@
         <module>microcloud-consumer-80</module>
         <module>microcloud-consumer-80-feign</module>
         <module>microcloud-consumer-80-feign-hystrix</module>
+        <module>microcloud-consumer-80-feign-hystrix-dashboard</module>
         <module>microcloud-security</module>
         <module>microcloud-eureka-7001</module>
         <module>microcloud-eureka-7002</module>

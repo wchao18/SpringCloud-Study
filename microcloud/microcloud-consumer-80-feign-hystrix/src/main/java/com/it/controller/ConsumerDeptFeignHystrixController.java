@@ -23,7 +23,7 @@ public class ConsumerDeptFeignHystrixController {
         return this.deptService.list();
     }
     @RequestMapping(value = "/consumer/dept/add")
-    public Object addDept(Dept dept) throws Exception {
+    public Object addDept(Dept dept) {
         return this.deptService.add(dept);
     }
 }
