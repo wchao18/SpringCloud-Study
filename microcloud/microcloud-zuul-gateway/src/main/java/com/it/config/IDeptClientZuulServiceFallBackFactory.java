@@ -60,8 +60,8 @@ public class IDeptClientZuulServiceFallBackFactory implements ZuulFallbackProvid
             @Override
             public HttpHeaders getHeaders() {
                 HttpHeaders httpHeaders = new HttpHeaders();
-                //httpHeaders.setContentType(MediaType.APPLICATION_JSON_UTF8);
-                httpHeaders.set("Content-Type", "text/html; charset=UTF-8");
+                httpHeaders.setContentType(MediaType.APPLICATION_JSON_UTF8);
+                //httpHeaders.set("Content-Type", "text/html; charset=UTF-8");
                 return httpHeaders;
             }
         };

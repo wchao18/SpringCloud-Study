@@ -10,7 +10,7 @@ eureka:
 
 feign:
   hystrix:
-    enabled: true
+    enabled: true   #开启服务降级
   compression:
     request:
       mime-types:
