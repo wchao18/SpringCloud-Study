@@ -87,13 +87,12 @@
             <artifactId>spring-boot-starter-security</artifactId>
         </dependency>-->
 
-        <!--springboot和cloud包结束-->
-
-        <!--eureka客户端配置-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-eureka</artifactId>
         </dependency>
+
+        <!--springboot和cloud包结束-->
     </dependencies>
 
     <build>

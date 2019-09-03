@@ -1,0 +1,36 @@
+server:
+  port: 9501
+
+eureka:
+  client:
+    service-url:
+      defaultZone : http://admin:123456@eureka-7001.com:7001/eureka/,http://admin:123456@eureka-7002.com:7002/eureka/,http://admin:123456@eureka-7003.com:7003/eureka/
+  instance :
+    instance-id : gateway-9501.com  #在状态status显示，信息列表显示主机名称
+    prefer-ip-address: true      #访问路径变为ip地址
+    lease-renewal-interval-in-seconds: 4   #设置心跳的时间间隔,默认30秒
+    lease-expiration-duration-in-seconds: 12 #三个心跳时间，超过此间隔时间，就认为服务挂了！！
+
+
+management:
+  security:
+    enabled: true # acutator组件，默认true
+info:
+   app.name : ${spring.application.name}
+   app.artifactId : $project.artifactId$
+   app.version : $project.version$
+
+spring:
+  application:
+    name: microcloud-zuul-gateway
+
+
+zuul:
+  routes:
+    #microcloud-provider-dept : /dept/proxy/**
+    mydept.serviceId: microcloud-provider-dept
+    mydept.path: /mydept/proxy/**
+  ignored-services: "*"   #忽略全部服务名称访问
+  #ignored-services: microcloud-provider-dept
+  prefix: /it  #服务前缀
+
