@@ -25,7 +25,7 @@
         <dependency>
             <groupId>com.it</groupId>
             <artifactId>microcloud-feign-api</artifactId>
-            <version>${version}</version>
+            <version>${project.version}</version>
         </dependency>
 
         <!--Feign-->
