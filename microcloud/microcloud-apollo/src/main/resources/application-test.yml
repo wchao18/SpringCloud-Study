@@ -1,0 +1,13 @@
+server:
+  port: 8082
+
+eureka:
+  client:
+    service-url:
+      defaultZone : http://server02:8080/eureka/
+spring:
+  application:
+    name: apollo-config-8081-test
+
+apollo:
+  meta: http://server02:8080

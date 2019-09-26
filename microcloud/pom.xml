@@ -30,6 +30,7 @@
         <module>microcloud-eureka-7002</module>
         <module>microcloud-eureka-7003</module>
         <module>microcloud-common</module>
+        <module>microcloud-apollo</module>
     </modules>
 
 
