@@ -1,5 +1,7 @@
 package com.it.config;
 
+import com.ctrip.framework.apollo.Config;
+import com.ctrip.framework.apollo.ConfigService;
 import com.ctrip.framework.apollo.model.ConfigChangeEvent;
 import com.ctrip.framework.apollo.spring.annotation.ApolloConfigChangeListener;
 import lombok.extern.slf4j.Slf4j;
@@ -29,5 +31,14 @@ public class ConfigRresh {
             log.error("change key:{}", key);
         }
         refreshScope.refresh("apolloConfig");
+    }
+
+
+    public static void main(String[] args) {
+        //默认命名空间是application
+        Config appConfig = ConfigService.getAppConfig();
+        String key = "sms.token";
+        String property = appConfig.getProperty(key, null);
+        System.out.println("sms.token.value:" + property);
     }
 }
