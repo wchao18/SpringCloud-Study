@@ -7,7 +7,8 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 
 @SpringBootApplication
 @MapperScan(value = "com.it.dao")
-//@EnableEurekaClient
+//新版本中注册注解不写也是可以的！！
+@EnableEurekaClient
 public class Dept_8001_StartSpringCloudApplication {
 
     public static void main(String[] args) {

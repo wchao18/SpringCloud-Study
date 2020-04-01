@@ -47,11 +47,11 @@
             <version>${project.version}</version>
         </dependency>
 
-        <dependency>
+     <!--   <dependency>
             <groupId>com.it</groupId>
             <artifactId>microcloud-security</artifactId>
             <version>${project.version}</version>
-        </dependency>
+        </dependency>-->
         <!--依赖本服务包结束-->
 
         <!--springboot和cloud包开始-->
