@@ -1,10 +1,12 @@
 package com.it.controller;
 
 import java.util.List;
+import java.util.Objects;
 import javax.annotation.Resource;
 
 import com.it.vo.Dept;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.http.HttpHeaders;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;

@@ -31,6 +31,9 @@
         <module>microcloud-eureka-7003</module>
         <module>microcloud-common</module>
         <module>microcloud-apollo</module>
+        <module>import-selector</module>
+        <module>microcloud-provider-dept-consul</module>
+        <module>microcloud-consumer-consul</module>
     </modules>
 
 
@@ -46,7 +49,7 @@
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
-                <version>Dalston.SR1</version>
+                <version>Dalston.RELEASE</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>

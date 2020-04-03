@@ -1,8 +1,6 @@
 package com.extend;
 
-import com.netflix.loadbalancer.ILoadBalancer;
 import com.netflix.loadbalancer.IRule;
-import com.netflix.loadbalancer.Server;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -14,10 +12,9 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class MyLoadBalanceConfig {
 
-  @Bean
-  public IRule iRule(){
-      //return new com.netflix.loadbalancer.RandomRule();
-      return new com.netflix.loadbalancer.AvailabilityFilteringRule();
-
-  }
+    @Bean
+    public IRule iRule() {
+        //return new com.netflix.loadbalancer.RandomRule();
+        return new com.netflix.loadbalancer.AvailabilityFilteringRule();
+    }
 }

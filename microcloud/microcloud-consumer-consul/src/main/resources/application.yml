@@ -1,0 +1,20 @@
+server:
+  port: 80
+
+spring:
+  application:
+    name: microcloud-consumer-consul
+
+  cloud:
+    consul:
+      port: 8500
+      host: 192.168.16.180
+      discovery:
+        port: ${server.port} #服务实例端口
+        register: true  #是否注册
+        instance-id: ${spring.application.name}-${spring.cloud.client.ipAddress} #实例ID,字母开头，字母或者数字结尾
+        service-name: ${spring.application.name}  #服务实例名称
+        healthCheckPath: /actuator/health   #健康检查路径
+        healthCheckInterval: 10s  #健康检查时间间隔
+        prefer-ip-address: true  #开启ip地址注册
+        ip-address: ${spring.cloud.client.ipAddress} #实例的请求ip

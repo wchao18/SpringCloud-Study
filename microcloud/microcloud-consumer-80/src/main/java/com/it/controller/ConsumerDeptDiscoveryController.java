@@ -3,6 +3,7 @@ package com.it.controller;
 import com.it.vo.Dept;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.ServiceInstance;
+import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.cloud.client.loadbalancer.LoadBalancerClient;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
@@ -33,6 +34,15 @@ public class ConsumerDeptDiscoveryController {
 
     @Autowired
     private LoadBalancerClient loadBalancerClient;
+
+    @Autowired
+    private DiscoveryClient discoveryClient;
+
+    @RequestMapping("/discoveryClient")
+    public Object getDiscoveryClientInfo() {
+        List<ServiceInstance> instances = discoveryClient.getInstances("MICROCLOUD-PROVIDER-DEPT");
+        return instances;
+    }
 
     /**
      * 可以测试londbalance策略是否生效
