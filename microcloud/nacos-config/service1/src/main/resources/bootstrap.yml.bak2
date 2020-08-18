@@ -1,0 +1,25 @@
+##自定义dataid
+##配置文件加载优先级:内部配置>ext(数组下标大优先级高)>share
+server:
+  port: 5610
+spring:
+  application:
+    name: service1
+  cloud:
+    nacos:
+      config:
+        serverAddr: server02:8848
+        namespace: c3964d69-4eb9-458d-bc68-c10c8c808583 #开发环境
+        group: TEST_GROUP
+        fileExtension: yaml  #dataid就是${application-name}+${spring.profiles.active}+文件扩展名,一定是yaml不是yml
+        username: nacos
+        password: nacos
+        extension-configs:
+        - dataId: ext-config.yaml  #ext-config.properties后缀和上面的yaml不对应报错
+          group: ext-group
+          refresh: true
+        shared-configs:
+        - dataId: share-config.yaml  #ext-config.properties后缀和上面的yaml不对应报错
+          group: share-group
+          refresh: true
+        enabled: true #是否关闭配置

@@ -1,0 +1,15 @@
+server:
+  port: 5610
+spring:
+  application:
+    name: service1
+  cloud:
+    nacos:
+      config:
+        serverAddr: server02:8848
+        namespace: c3964d69-4eb9-458d-bc68-c10c8c808583 #开发环境
+        group: TEST_GROUP
+        fileExtension: yaml  #dataid就是application-name+环境变量+文件扩展名,一定是yml不是yaml
+        username: nacos
+        password: nacos
+        prefix: ${spring.application.name}
