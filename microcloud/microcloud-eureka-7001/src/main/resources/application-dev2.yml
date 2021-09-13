@@ -1,3 +1,4 @@
+
 server:
   port: 7002
 
@@ -8,17 +9,15 @@ eureka:
     eviction-interval-timer-in-ms: 5000  #设置清理服务的间隔时间，单位毫秒，默认60秒，***自我保护模式关闭才生效**
     enable-self-preservation: false       #eureka的自我保护模式，
   client:
-    register-with-eureka: false
+    register-with-eureka: true
                                   # Cannot execute request on any known serverz 一直在控制台刷日志
                                   # eureka本身也是一个服务，默认也会注册到eureka上，但是没什么意思，因此去掉
-    fetch-registry: false         #不通过eureka获服务的注册信息
+    fetch-registry: true         #不通过eureka获服务的注册信息
     service-url:
-       defaultZone: http://admin:123456@eureka-7001.com:7001/eureka/,http://admin:123456@eureka-7003.com:7003/eureka/
+       defaultZone : http://admin:123456@eureka-7001.com:7001/eureka/,http://admin:123456@eureka-7003.com:7003/eureka/
 
-
-security:
-  basic:
-    enabled: true  # 增加eureka的访问权限控制
-  user:
+spring:
+  security:
+   user:
     name: admin
     password: 123456

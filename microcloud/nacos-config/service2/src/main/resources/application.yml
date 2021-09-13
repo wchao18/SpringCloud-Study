@@ -1,0 +1,9 @@
+server:
+  port: 5712
+spring:
+  application:
+    name: service2
+  cloud:
+    nacos:
+      discovery:
+        server-addr: nacos1:8848

@@ -47,11 +47,11 @@
             <version>${project.version}</version>
         </dependency>
 
-        <dependency>
+        <!--<dependency>
             <groupId>com.it</groupId>
             <artifactId>microcloud-security</artifactId>
             <version>${project.version}</version>
-        </dependency>
+        </dependency>-->
         <!--依赖本服务包结束-->
 
         <!--springboot和cloud包开始-->
@@ -80,7 +80,7 @@
 
         <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-eureka</artifactId>
+            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
         </dependency>
 
         <!--springboot和cloud包结束-->

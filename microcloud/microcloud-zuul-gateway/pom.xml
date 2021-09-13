@@ -44,7 +44,7 @@
 
         <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-zuul</artifactId>
+            <artifactId>spring-cloud-netflix-zuul</artifactId>
         </dependency>
         <!--springboot和cloud包结束-->
 

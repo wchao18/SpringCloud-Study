@@ -6,3 +6,4 @@ eureka:
     service-url:
       defaultZone : http://admin:123456@eureka-7001.com:7001/eureka/,http://admin:123456@eureka-7002.com:7002/eureka/,http://admin:123456@eureka-7003.com:7003/eureka/
     register-with-eureka: false
+    registry-fetch-interval-seconds: 30 #默认30秒 从eureka服务器上拉取信息

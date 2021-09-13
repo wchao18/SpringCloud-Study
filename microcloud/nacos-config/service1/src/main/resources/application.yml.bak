@@ -1,0 +1,12 @@
+server:
+  port: 5711
+spring:
+  application:
+    name: service1
+  cloud:
+    nacos:
+      discovery:
+        server-addr: nacos1:8848
+        cluster-name: hz
+        namespace: e8859216-519e-423e-b626-a84dcd8d7db9 #开发环境dev
+        group: dev_group

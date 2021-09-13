@@ -14,20 +14,19 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class ConfigController {
 
-    @Value("${common.name:test}")
+    @Value("${redis.port}")
     private String config1;
 
-    //测试扩展dataid
-    @Value("${ext.name:test}")
-    private String extName;
+    @Value("${mysql.port}")
+    private String config2;
 
-    @GetMapping("/configs")
+    @GetMapping("/config1")
     public String getConfigs(){
         return config1;
     }
 
-    @GetMapping("/ext")
+    @GetMapping("/config2")
     public String getExtConfigs(){
-        return extName;
+        return config2;
     }
 }

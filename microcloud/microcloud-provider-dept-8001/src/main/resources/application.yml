@@ -4,23 +4,17 @@ server:
 eureka:
   client:
     service-url:
-      defaultZone : http://admin:123456@eureka-7001.com:7001/eureka/,http://admin:123456@eureka-7002.com:7002/eureka/,http://admin:123456@eureka-7003.com:7003/eureka/
+      defaultZone: http://admin:123456@eureka-7001.com:7001/eureka,http://admin:123456@eureka-7002.com:7002/eureka,http://admin:123456@eureka-7003.com:7003/eureka
   instance :
     #instance-id : dept-8001.com  #在状态status显示，信息列表显示主机名称
-    instance-id: ${spring.cloud.client.ipAddress}:${server.port}  #查看HostInfoEnvironmentPostProcessor
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}:${spring.application.name}
+    #查看HostInfoEnvironmentPostProcessor
     prefer-ip-address: true      #访问路径变为ip地址
     lease-renewal-interval-in-seconds: 4   #设置心跳的时间间隔,默认30秒
     lease-expiration-duration-in-seconds: 12 #三个心跳时间，超过此间隔时间，就认为服务挂了！！（默认90秒）
-
-
-
-management:
-  security:
-    enabled: true # acutator组件，默认true
-info:
-   app.name : ${spring.application.name}
-   app.artifactId : $project.artifactId$
-   app.version : $project.version$
+    ##eureka自定义元数据
+    metadata-map:
+      region: 杭州
 
 spring:
   datasource:
