@@ -8,6 +8,7 @@ import com.it.vo.Dept;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.http.HttpHeaders;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -22,8 +23,8 @@ public class ConsumerDeptController {
     @Autowired
     private RestTemplate restTemplate;
 
-    @RequestMapping(value = "/consumer/dept/get")
-    public Object getDept(long id) {
+    @RequestMapping(value = "/consumer/dept/get/{id}")
+    public Object getDept(@PathVariable("id") long id) {
         Dept dept = this.restTemplate.getForObject(DEPT_GET_URL + id,
                 Dept.class);
         return dept;

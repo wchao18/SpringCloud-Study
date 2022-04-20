@@ -17,7 +17,6 @@
     <modules>
         <module>microcloud-feign-api</module>
         <module>microcloud-provider-dept-8001</module>
-        <module>microcloud-provider-dept-8001-hystrix</module>
         <module>microcloud-zuul-gateway</module>
         <module>microcloud-consumer-80</module>
         <module>microcloud-consumer-80-feign</module>
