@@ -15,9 +15,3 @@ eureka:
     fetch-registry: true         #不通过eureka获服务的注册信息
     service-url:
        defaultZone : http://admin:123456@eureka-7001.com:7001/eureka/,http://admin:123456@eureka-7003.com:7003/eureka/
-
-spring:
-  security:
-   user:
-    name: admin
-    password: 123456
