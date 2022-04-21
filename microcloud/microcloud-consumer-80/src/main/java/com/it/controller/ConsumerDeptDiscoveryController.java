@@ -8,6 +8,7 @@ import org.springframework.cloud.client.loadbalancer.LoadBalancerClient;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -53,8 +54,8 @@ public class ConsumerDeptDiscoveryController {
         return choose.getHost() + ":" + choose.getPort();
     }
 
-    @RequestMapping(value = "/consumer/dept/get")
-    public Object getDept(long id) {
+    @RequestMapping(value = "/consumer/dept/get/{id}")
+    public Object getDept(@PathVariable("id") long id) {
         Dept dept = this.restTemplate.exchange(DEPT_GET_URL + id, HttpMethod.GET,
                 new HttpEntity<>(httpHeaders), Dept.class).getBody();
         return dept;

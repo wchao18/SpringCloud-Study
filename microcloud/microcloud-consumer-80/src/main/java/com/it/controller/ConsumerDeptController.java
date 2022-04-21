@@ -5,6 +5,7 @@ import java.util.Objects;
 import javax.annotation.Resource;
 
 import com.it.vo.Dept;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.http.HttpHeaders;
@@ -23,11 +24,16 @@ public class ConsumerDeptController {
     @Autowired
     private RestTemplate restTemplate;
 
+    @HystrixCommand(fallbackMethod = "getDeptFallBack")
     @RequestMapping(value = "/consumer/dept/get/{id}")
     public Object getDept(@PathVariable("id") long id) {
         Dept dept = this.restTemplate.getForObject(DEPT_GET_URL + id,
                 Dept.class);
         return dept;
+    }
+
+    public Object getDeptFallBack(long id) {
+        return "报错了";
     }
 
     @RequestMapping(value = "/consumer/dept/list")

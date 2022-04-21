@@ -2,6 +2,7 @@ package com.it.controller;
 import com.it.service.IDeptClientService;
 import com.it.vo.Dept;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 /**
@@ -14,8 +15,8 @@ public class ConsumerDeptFeignController {
     @Autowired
     private IDeptClientService deptService ;
 
-    @RequestMapping(value = "/consumer/dept/get")
-    public Object getDept(long id) {
+    @RequestMapping(value = "/consumer/dept/get/{id}")
+    public Object getDept(@PathVariable("id") long id) {
         return this.deptService.get(id);
     }
     @RequestMapping(value = "/consumer/dept/list")

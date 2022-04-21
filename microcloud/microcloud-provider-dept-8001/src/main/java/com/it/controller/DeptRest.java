@@ -31,6 +31,12 @@ public class DeptRest {
 
     @RequestMapping(value = "/dept/get/{id}", method = RequestMethod.GET)
     public Object get(@PathVariable("id") long id) {
+        try {
+            //测试hytrix熔断
+            Thread.sleep(500);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         return this.deptService.get(id);
     }
 
