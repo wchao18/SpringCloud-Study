@@ -8,7 +8,10 @@ eureka:
     register-with-eureka: false
 
 
+
 feign:
+  hystrix:
+    enabled: true
   compression:
     request:
       mime-types:
@@ -16,6 +19,19 @@ feign:
         - application/xml
         - application/json
       min-request-size: 2048
+
+hystrix:
+  command:
+    default:
+  circuitBreaker:
+    requestVolumeThreshold: 20 #触发熔断的最小请求次数，默认20
+    sleepWindowInMilliseconds: 10000 #熔断多少秒后去尝试请求
+    errorThresholdPercentage: 50 #触发熔断的失败请求最小占比，默认50%
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 2000
+
 
 
 logging:

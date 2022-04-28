@@ -20,7 +20,6 @@
         <module>microcloud-zuul-gateway</module>
         <module>microcloud-consumer-80</module>
         <module>microcloud-consumer-80-feign</module>
-        <module>microcloud-consumer-feign-hystrix-dashboard</module>
         <module>microcloud-consumer-feign-hystrix-turbine</module>
         <module>microcloud-security</module>
         <module>microcloud-eureka-7001</module>

@@ -17,10 +17,10 @@ public class FeignClientConfig {
         return feign.Logger.Level.FULL;
     }
 
-    @Bean
+   /* @Bean
     public BasicAuthRequestInterceptor getBasicAuthRequestInterceptor() {
         return new BasicAuthRequestInterceptor("admin", "123456");
-    }
+    }*/
 
 
 }

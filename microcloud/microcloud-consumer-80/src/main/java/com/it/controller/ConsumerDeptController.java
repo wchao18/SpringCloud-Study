@@ -6,6 +6,7 @@ import javax.annotation.Resource;
 
 import com.it.vo.Dept;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.http.HttpHeaders;
@@ -24,9 +25,17 @@ public class ConsumerDeptController {
     @Autowired
     private RestTemplate restTemplate;
 
-    @HystrixCommand(fallbackMethod = "getDeptFallBack")
+    @HystrixCommand(fallbackMethod = "getDeptFallBack",
+            commandProperties = {@HystrixProperty(name = "execution.isolation.thread.timeoutInMilliseconds", value = "1500")})
     @RequestMapping(value = "/consumer/dept/get/{id}")
     public Object getDept(@PathVariable("id") long id) {
+        if (id == 4) {
+            //被调用服务停止了,这个不受影响
+            return "正常访问";
+        }
+        if (id == 1) {
+            throw new RuntimeException("太忙了");
+        }
         Dept dept = this.restTemplate.getForObject(DEPT_GET_URL + id,
                 Dept.class);
         return dept;
