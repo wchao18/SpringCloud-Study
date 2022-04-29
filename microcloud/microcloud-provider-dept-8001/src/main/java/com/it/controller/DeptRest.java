@@ -31,11 +31,15 @@ public class DeptRest {
 
     @RequestMapping(value = "/dept/get/{id}", method = RequestMethod.GET)
     public Object get(@PathVariable("id") long id) {
-        try {
+        //1、超时熔断 2、宕机熔断
+        /*try {
             //测试hytrix熔断
-            Thread.sleep(500);
+            Thread.sleep(2000);
         } catch (InterruptedException e) {
             e.printStackTrace();
+        }*/
+        if(id == 2){
+            throw new RuntimeException("服务Dept异常");
         }
         return this.deptService.get(id);
     }

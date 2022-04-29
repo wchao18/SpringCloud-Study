@@ -23,9 +23,6 @@ public class ConsumerDeptFeignController {
             //被调用服务停止了,这个不受影响
             return "正常访问";
         }
-        if (id == 1) {
-            throw new RuntimeException("太忙了"); //抛出异常
-        }
         return this.deptService.get(id);
     }
 

@@ -56,8 +56,11 @@
             <artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
         </dependency>
 
-
-
+        <!--可以观察到熔断器状态-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
 
 
     </dependencies>

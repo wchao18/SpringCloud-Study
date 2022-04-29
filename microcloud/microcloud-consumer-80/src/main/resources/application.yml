@@ -1,5 +1,5 @@
 server:
-  port: 8163
+  port: 80
 
 eureka:
   client:
@@ -18,3 +18,10 @@ hystrix:
         isolation:
           thread:
             timeoutInMilliseconds: 2000
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
