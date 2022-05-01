@@ -16,7 +16,7 @@ import java.util.Arrays;
 @EnableEurekaClient
 @EnableCircuitBreaker
 //web访问路径：http://127.0.0.1/hystrix
-//监控服务url: http://127.0.0.1/hystrix.stream
+//监控服务url: http://localhost/actuator/hystrix.stream
 @EnableHystrixDashboard
 @EnableFeignClients(basePackages = {"com.it.service"})
 public class Consumer_80_Feign_StartSpringCloudApplication {
@@ -24,16 +24,4 @@ public class Consumer_80_Feign_StartSpringCloudApplication {
         SpringApplication.run(Consumer_80_Feign_StartSpringCloudApplication.class,
                 args);
     }
-
-    //@Bean
-    public ServletRegistrationBean getServlet(){
-        HystrixMetricsStreamServlet hystrixMetricsStreamServlet = new HystrixMetricsStreamServlet();
-        ServletRegistrationBean servletRegistrationBean = new ServletRegistrationBean(hystrixMetricsStreamServlet);
-
-        servletRegistrationBean.setLoadOnStartup(1);
-        servletRegistrationBean.setUrlMappings(Arrays.asList("/actuator/hystrix.stream"));
-        servletRegistrationBean.setName("HystrixMetricsStreamServlet");
-        return servletRegistrationBean;
-    }
-
 }

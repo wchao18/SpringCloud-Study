@@ -11,7 +11,7 @@ eureka:
 
 feign:
   hystrix:
-    enabled: true
+    enabled: true  #默认关闭
   compression:
     request:
       mime-types:
@@ -40,7 +40,7 @@ management:
   endpoints:
     web:
       exposure:
-        include: "*"
+        include: "*"  ##actuator 只看开放了info、health
 
 
 logging:
