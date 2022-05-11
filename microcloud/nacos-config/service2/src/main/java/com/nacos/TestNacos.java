@@ -1,4 +1,4 @@
-package com.it.nacos;
+package com.nacos;
 
 import com.alibaba.nacos.api.NacosFactory;
 import com.alibaba.nacos.api.PropertyKeyConst;
@@ -15,7 +15,7 @@ import java.util.concurrent.Executor;
  * @description TODO
  * @date 2020/08/17 15:22
  */
-public class DemoMain {
+public class TestNacos {
 
     public static void main(String[] args) throws NacosException, IOException {
 
