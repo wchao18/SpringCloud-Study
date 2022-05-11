@@ -27,7 +27,6 @@
         <module>microcloud-apollo</module>
         <module>microcloud-provider-dept-consul</module>
         <module>microcloud-consumer-consul</module>
-        <module>nacos-demo</module>
         <module>nacos-config</module>
     </modules>
 
