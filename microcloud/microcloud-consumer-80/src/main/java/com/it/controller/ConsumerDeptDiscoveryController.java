@@ -34,7 +34,7 @@ public class ConsumerDeptDiscoveryController {
     private HttpHeaders httpHeaders;
 
     @Autowired
-    private LoadBalancerClient loadBalancerClient;
+    private LoadBalancerClient loadBalancerClient;//对应注解 @LoadBalanced
 
     @Autowired
     private DiscoveryClient discoveryClient;
@@ -50,7 +50,7 @@ public class ConsumerDeptDiscoveryController {
      */
     @RequestMapping(value = "/client")
     public Object client() {
-        ServiceInstance choose = loadBalancerClient.choose("MICROCLOUD-PROVIDER-DEPT");
+        ServiceInstance choose = loadBalancerClient.choose("microservice-consumer");
         return choose.getHost() + ":" + choose.getPort();
     }
 

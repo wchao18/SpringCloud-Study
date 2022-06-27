@@ -25,3 +25,7 @@ management:
       exposure:
         include: "*"
 
+##测试loadBalancerClient的负载均衡
+microservice-consumer:
+  ribbon:
+    listOfServers: localhost:8000,localhost:8001
