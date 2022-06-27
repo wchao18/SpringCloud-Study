@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.concurrent.TimeUnit;
 
 
 @RestController
@@ -51,6 +52,12 @@ public class DeptRest {
 
     @RequestMapping(value = "/dept/list", method = RequestMethod.GET)
     public Object list() {
+        try {
+            //测试超时降级
+            TimeUnit.SECONDS.sleep(2);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         return this.deptService.list();
     }
 

@@ -3,8 +3,11 @@ package com.it.config;
 import com.it.service.IDeptClientService;
 import com.it.vo.Dept;
 import feign.hystrix.FallbackFactory;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -27,7 +30,10 @@ public class IDeptClientServiceFallBackFactory implements FallbackFactory<IDeptC
 
             @Override
             public List<Dept> list() {
-                return null;
+                Dept vo = new Dept();
+                vo.setDname("hystrix");
+                vo.setDeptno(88888888888L);
+                return Arrays.asList(vo);
             }
 
             @Override

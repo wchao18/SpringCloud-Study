@@ -1,0 +1,35 @@
+server:
+  port: 8130
+
+eureka:
+  client:
+    service-url:
+      defaultZone : http://admin:123456@eureka-7001.com:7001/eureka/,http://admin:123456@eureka-7002.com:7002/eureka/,http://admin:123456@eureka-7003.com:7003/eureka/
+    register-with-eureka: false
+
+
+
+
+#sentinel
+spring:
+  cloud:
+    sentinel:
+      enabled: true # 是否开启。默认为 true 开启
+      eager: true # 是否饥饿加载。默认为 false 关闭
+      transport:
+        port: 8719 # 假如被占用了会自动从8719开始依次+1扫描。直至找到未被占用的端口，默认8719
+        dashboard: 192.168.16.177:8089 # 指定控制台服务的地址
+      filter:
+        url-patterns: /**
+
+
+feign:
+  hystrix:
+    enabled: false  #默认关闭
+  sentinel:
+    enabled: true
+
+
+logging:
+  level:
+     root: debug
