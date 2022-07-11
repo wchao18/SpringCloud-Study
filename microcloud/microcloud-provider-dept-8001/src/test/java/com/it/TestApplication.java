@@ -8,6 +8,7 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
+
 import java.util.List;
 
 /**
@@ -23,7 +24,7 @@ public class TestApplication {
     private IDeptDAO deptDAO;
 
     @Test
-    public void testGetList(){
+    public void testGetList() {
         List<Dept> all = deptDAO.findAll();
         System.out.println(JSON.toJSONString(all));
     }

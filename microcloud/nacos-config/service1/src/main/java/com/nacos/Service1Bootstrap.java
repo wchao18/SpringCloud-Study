@@ -15,10 +15,8 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 public class Service1Bootstrap {
 
     public static void main(String[] args) {
-        SpringApplication.run(Service1Bootstrap.class,args);
+        SpringApplication.run(Service1Bootstrap.class, args);
     }
-
-
 
 
 }

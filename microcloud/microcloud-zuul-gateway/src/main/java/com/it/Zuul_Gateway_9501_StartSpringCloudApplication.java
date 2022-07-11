@@ -1,4 +1,5 @@
 package com.it;
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
@@ -20,6 +21,6 @@ public class Zuul_Gateway_9501_StartSpringCloudApplication {
      *   因此zuul也要加服务降级处理
      */
     public static void main(String[] args) {
-        SpringApplication.run(Zuul_Gateway_9501_StartSpringCloudApplication.class,args);
+        SpringApplication.run(Zuul_Gateway_9501_StartSpringCloudApplication.class, args);
     }
 }

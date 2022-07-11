@@ -5,7 +5,7 @@ eureka:
   client:
     service-url:
       defaultZone: http://admin:123456@eureka-7001.com:7001/eureka,http://admin:123456@eureka-7002.com:7002/eureka,http://admin:123456@eureka-7003.com:7003/eureka
-  instance :
+  instance:
     #instance-id : dept-8001.com  #在状态status显示，信息列表显示主机名称
     instance-id: ${spring.cloud.client.ip-address}:${server.port}:${spring.application.name}
     #查看HostInfoEnvironmentPostProcessor
@@ -23,7 +23,7 @@ spring:
     url: jdbc:mysql://192.168.13.170:3306/spring_test?useUnicode=true&characterEncoding=utf8  #编码不加，可能会乱码
     username: root
     password: Root!@#
-    filters : stat,wall,log4j  #数据源监控配置
+    filters: stat,wall,log4j  #数据源监控配置
     dbcp2:
       initial-size: 5        #初始化提供的连接数
       min-idle: 5            #数据库连接池维持的最小连接数

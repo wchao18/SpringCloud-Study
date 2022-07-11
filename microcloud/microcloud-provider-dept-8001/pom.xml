@@ -73,10 +73,10 @@
 
         <!--security包,已经把这个独立成microcloud-security模块-->
         <!--Using default security password: 8d4ba580-882a-4934-8f44-479705f4e377-->
-       <!-- <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-security</artifactId>
-        </dependency>-->
+        <!-- <dependency>
+             <groupId>org.springframework.boot</groupId>
+             <artifactId>spring-boot-starter-security</artifactId>
+         </dependency>-->
 
         <dependency>
             <groupId>org.springframework.cloud</groupId>

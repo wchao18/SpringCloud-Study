@@ -19,15 +19,16 @@ public class RestConfig {
      * 2.ribbon的loadbalance,服务如果挂一台，服务没找到，还是会报错的，下一次请求就可以了（很危险！！）
      * 3.这种走不了ip+port的形式
      */
+    @Primary
     @LoadBalanced
     @Bean("restTemplate2")
     public RestTemplate restTemplate2() {
         return new RestTemplate();
     }
 
-    @Primary
+/*
     @Bean
     public RestTemplate restTemplate() {
         return new RestTemplate();
-    }
+    }*/
 }

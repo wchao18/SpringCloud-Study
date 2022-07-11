@@ -20,14 +20,14 @@ spring:
         username: nacos   # 权限认证，nacos.core.auth.enabled=true 时需要添加
         password: nacos
         extension-configs:
-        - dataId: redis.yaml
-          group: dev_group
-          refresh: true
-        - dataId: mysql.yaml
-          group: dev_group
-          refresh: true
+          - dataId: redis.yaml
+            group: dev_group
+            refresh: true
+          - dataId: mysql.yaml
+            group: dev_group
+            refresh: true
         shared-configs:
-        - dataId: share-config.yaml
-          group: share-group
-          refresh: true
+          - dataId: share-config.yaml
+            group: share-group
+            refresh: true
         enabled: true #是否关闭配置

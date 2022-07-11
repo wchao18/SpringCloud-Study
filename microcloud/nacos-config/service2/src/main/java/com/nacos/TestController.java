@@ -16,7 +16,7 @@ public class TestController {
     private FeignInterface feignInterface;
 
     @GetMapping("/getCnf")
-    private String getConfig(){
+    private String getConfig() {
         return feignInterface.getConfigs();
     }
 }

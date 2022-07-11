@@ -12,7 +12,7 @@ import org.springframework.context.annotation.Configuration;
 public class ZuulConfig {
 
     @Bean
-    public AuthorizedFilter authorizedFilter(){
+    public AuthorizedFilter authorizedFilter() {
         return new AuthorizedFilter();
     }
 }

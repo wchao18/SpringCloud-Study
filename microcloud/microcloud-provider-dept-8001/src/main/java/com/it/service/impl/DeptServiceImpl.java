@@ -7,6 +7,7 @@ import com.it.service.IDeptService;
 import com.it.vo.Dept;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class DeptServiceImpl implements IDeptService {
@@ -19,6 +20,7 @@ public class DeptServiceImpl implements IDeptService {
         return this.deptDAO.findById(id);
     }
 
+    @Transactional
     @Override
     public boolean add(Dept dept) {
         return this.deptDAO.doCreate(dept);

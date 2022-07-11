@@ -12,7 +12,7 @@ import java.util.List;
 
 /**
  * @author wangchao
- * @description 服务降级处理,服务不可用的情况下调用
+ * @description 服务降级处理, 服务不可用的情况下调用
  * @date 2019/09/02 14:02
  */
 @Component

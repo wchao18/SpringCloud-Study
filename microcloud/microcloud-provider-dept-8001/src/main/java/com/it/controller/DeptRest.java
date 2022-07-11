@@ -29,7 +29,6 @@ public class DeptRest {
     }
 
 
-
     @RequestMapping(value = "/dept/get/{id}", method = RequestMethod.GET)
     public Object get(@PathVariable("id") long id) {
         //1、超时熔断 2、宕机熔断
@@ -39,13 +38,13 @@ public class DeptRest {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }*/
-        if(id == 2){
+        if (id == 2) {
             throw new RuntimeException("服务Dept异常");
         }
         return this.deptService.get(id);
     }
 
-    @RequestMapping(value = "/dept/add", method = RequestMethod.GET)
+    @RequestMapping(value = "/dept/add", method = RequestMethod.POST)
     public Object add(@RequestBody Dept dept) {
         return this.deptService.add(dept);
     }

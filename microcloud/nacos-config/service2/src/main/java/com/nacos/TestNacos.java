@@ -47,7 +47,7 @@ public class TestNacos {
             //当配置有变化时，获取通知
             @Override
             public void receiveConfigInfo(String configInfo) {
-                System.out.println("监听配置：" +  configInfo);
+                System.out.println("监听配置：" + configInfo);
             }
         });
         System.in.read();

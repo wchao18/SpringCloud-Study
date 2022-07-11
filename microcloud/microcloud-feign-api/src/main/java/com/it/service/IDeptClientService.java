@@ -7,9 +7,10 @@ import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+
 import java.util.List;
 
-@FeignClient(value = "MICROCLOUD-PROVIDER-DEPT", configuration = FeignClientConfig.class,fallbackFactory = IDeptClientServiceFallBackFactory.class)
+@FeignClient(value = "MICROCLOUD-PROVIDER-DEPT", configuration = FeignClientConfig.class, fallbackFactory = IDeptClientServiceFallBackFactory.class)
 public interface IDeptClientService {
     @RequestMapping(method = RequestMethod.GET, value = "/dept/get/{id}")
     Dept get(@PathVariable("id") long id);

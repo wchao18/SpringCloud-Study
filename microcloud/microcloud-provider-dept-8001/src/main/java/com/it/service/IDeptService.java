@@ -6,7 +6,9 @@ import java.util.List;
 
 
 public interface IDeptService {
-	Dept get(long id) ;
-	boolean add(Dept dept) ;
-	List<Dept> list() ;
+    Dept get(long id);
+
+    boolean add(Dept dept);
+
+    List<Dept> list();
 }

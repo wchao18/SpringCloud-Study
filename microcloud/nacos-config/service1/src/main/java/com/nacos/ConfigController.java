@@ -21,12 +21,12 @@ public class ConfigController {
     private String config2;
 
     @GetMapping("/config1")
-    public String getConfigs(){
+    public String getConfigs() {
         return config1;
     }
 
     @GetMapping("/config2")
-    public String getExtConfigs(){
+    public String getExtConfigs() {
         return config2;
     }
 }

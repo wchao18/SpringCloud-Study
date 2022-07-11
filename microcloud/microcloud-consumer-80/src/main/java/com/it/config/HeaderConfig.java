@@ -21,7 +21,7 @@ public class HeaderConfig {
     @Bean
     public HttpHeaders httpHeaders() {
         HttpHeaders httpHeaders = new HttpHeaders();
-        httpHeaders.add("Authorization",generateBasicAuth());
+        httpHeaders.add("Authorization", generateBasicAuth());
         return httpHeaders;
     }
 
